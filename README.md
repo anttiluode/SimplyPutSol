@@ -9,6 +9,10 @@ with a correction algorithm that teaches successful joint displacement.
 **SimplyPutSol asks a different question:** can a shared dynamical network
 learn by making its *own exploratory actions* and comparing their returns?
 
+## First result (frozen v1)
+
+The [measured benchmark receipt](RESULTS.md) reports **4/5 predeclared gates passing**. The cable learns the first bell very well but **forgets it after later tasks** (mean distance 0.029 -> 0.736). It beats the tested RNN in final mean distance (0.396 vs 0.665), yet **frozen cables (0.395) and phase-off cables (0.390) do as well or better**. The key claimed extra mechanism therefore **fails its ablation**. Static local experts retained the bell more reliably. Do not read this as a discovery of a new learning mechanism.
+
 ### The apparatus
 
 A two-joint arm reaches for bell, switch, light, or horn. Task cue and
