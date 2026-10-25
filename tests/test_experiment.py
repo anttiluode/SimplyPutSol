@@ -30,6 +30,8 @@ class MechanismTests(unittest.TestCase):
         minus.omega[k]-=eps
         actual=(plus.forward(xs)[0]-minus.forward(xs)[0])/(2*eps)
         np.testing.assert_allclose(actual,m.B[:,k]*dw[k],atol=1e-8)
+        plus=copy.deepcopy(m)
+        minus=copy.deepcopy(m)
         plus.C[k,j]+=eps
         minus.C[k,j]-=eps
         actual=(plus.forward(xs)[0]-minus.forward(xs)[0])/(2*eps)
